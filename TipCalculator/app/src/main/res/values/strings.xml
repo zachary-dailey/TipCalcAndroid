@@ -5,4 +5,6 @@
     <string name="numPeople">Number of People:  </string>
     <string name="percTip">Percent Tip:</string>
     <string name="perPerson">Price Per Person:</string>
+    <string name="textResult">$0.00</string>
+    <string name="btnCalculate">Calculate</string>
 </resources>

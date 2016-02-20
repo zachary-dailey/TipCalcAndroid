@@ -26,10 +26,12 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/appTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25sp">
+        android:layout_marginTop="25sp"
+        android:id="@+id/tableLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false">
 
         <TableRow
             android:layout_width="match_parent"
@@ -46,8 +48,11 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
-                android:layout_column="1"/>
+                android:id="@+id/textCost"
+                android:layout_column="1"
+                android:inputType="numberDecimal"
+                android:hint="31.41"
+                android:paddingLeft="15sp"/>
         </TableRow>
 
         <TableRow
@@ -65,8 +70,11 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2"
-                android:layout_column="1"/>
+                android:id="@+id/textNumPeople"
+                android:layout_column="1"
+                android:inputType="number"
+                android:hint="4"
+                android:paddingLeft="15sp"/>
         </TableRow>
 
         <TableRow
@@ -84,29 +92,53 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText3"
-                android:layout_column="1"/>
+                android:id="@+id/textPercTip"
+                android:layout_column="1"
+                android:inputType="numberDecimal"
+                android:hint="18"
+                android:paddingLeft="15sp"/>
         </TableRow>
 
-        <TableRow
+    </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnCalculate"
+            android:id="@+id/btnCalculate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15sp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnCalculate">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/perPerson"
                 android:id="@+id/perPerson"
-                android:layout_column="0"
                 android:textSize="22sp"
-                android:layout_marginTop="25sp"/>
+                android:paddingTop="15sp"
+                android:layout_below="@+id/btnCalculate"/>
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText4"
-                android:layout_column="1"
-                android:layout_marginTop="25sp"/>
-        </TableRow>
-    </TableLayout>
+                android:text="@string/textResult"
+                android:id="@+id/textResult"
+                android:textSize="18sp"
+                android:paddingLeft="15sp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 </RelativeLayout>
