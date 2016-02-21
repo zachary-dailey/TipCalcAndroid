@@ -120,29 +120,74 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"/>
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btnCalculate">
+            android:layout_below="@+id/btnCalculate"
+            android:paddingTop="20sp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/perPerson"
-                android:id="@+id/perPerson"
-                android:textSize="22sp"
-                android:paddingTop="15sp"
-                android:layout_below="@+id/btnCalculate"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/textResult"
-                android:id="@+id/textResult"
-                android:textSize="18sp"
-                android:paddingLeft="15sp"/>
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tip"
+                    android:id="@+id/tip"
+                    android:textSize="22sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resultTip"
+                    android:id="@+id/resultTip"
+                    android:paddingLeft="15sp"
+                    android:textSize="18sp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:id="@+id/total"
+                    android:textSize="22sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resultTotal"
+                    android:id="@+id/resultTotal"
+                    android:paddingLeft="15sp"
+                    android:textSize="18sp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perPerson"
+                    android:id="@+id/perPerson"
+                    android:textSize="22sp"
+                    android:layout_below="@+id/btnCalculate"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resultPerPerson"
+                    android:id="@+id/resultPerPerson"
+                    android:textSize="18sp"
+                    android:paddingLeft="15sp"/>
+            </TableRow>
+        </TableLayout>
 
     </RelativeLayout>
 </RelativeLayout>

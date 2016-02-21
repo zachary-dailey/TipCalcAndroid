@@ -46,20 +46,27 @@ public class MainActivity extends AppCompatActivity
 		EditText cost = (EditText) findViewById(R.id.textCost);
 		EditText people = (EditText) findViewById(R.id.textNumPeople);
 		EditText tip = (EditText) findViewById(R.id.textPercTip);
-		TextView result = (TextView) findViewById(R.id.textResult);
+
+		TextView resultTip = (TextView) findViewById(R.id.resultTip);
+		TextView resultTotal = (TextView) findViewById(R.id.resultTotal);
+		TextView resultPerPerson = (TextView) findViewById(R.id.resultPerPerson);
 
 		// set method calues
 
 		double costOfMeal;
 		int numOfPeople;
 		double percTip;
-		double costPerPerson;
+		double tipAmt;
+		double totalAmt;
+		double perPersonAmt;
 
 		String strCost;
 		String strPeople;
 		String strTip;
 
-		String textResult;
+		String strResultTip;
+		String strResultTotal;
+		String strResultPerPerson;
 
 		// initialize string values
 
@@ -78,14 +85,26 @@ public class MainActivity extends AppCompatActivity
 				percTip = Double.parseDouble(strTip);
 				percTip = percTip / 100;
 
-				costPerPerson = (costOfMeal * (1 + percTip)) / numOfPeople;
+				// calculate values
+
+				tipAmt = (costOfMeal * percTip);
+				totalAmt = (costOfMeal + tipAmt);
+				perPersonAmt = (totalAmt / numOfPeople);
+
+				// format values
 
 				DecimalFormat currencyUSD = new DecimalFormat("$###,##0.00");
 				currencyUSD.setDecimalSeparatorAlwaysShown(true);
 
-				textResult = (currencyUSD.format(costPerPerson));
+				strResultTip = (currencyUSD.format(tipAmt));
+				strResultTotal = (currencyUSD.format(totalAmt));
+				strResultPerPerson = (currencyUSD.format(perPersonAmt));
 
-				result.setText(textResult);
+				// set display values
+
+				resultTip.setText(strResultTip);
+				resultTotal.setText(strResultTotal);
+				resultPerPerson.setText(strResultPerPerson);
 			}
 		} catch (Exception e)
 		{
@@ -116,12 +135,17 @@ public class MainActivity extends AppCompatActivity
 			EditText cost = (EditText) findViewById(R.id.textCost);
 			EditText people = (EditText) findViewById(R.id.textNumPeople);
 			EditText tip = (EditText) findViewById(R.id.textPercTip);
-			TextView result = (TextView) findViewById(R.id.textResult);
+
+			TextView resultTip = (TextView) findViewById(R.id.resultTip);
+			TextView resultTotal = (TextView) findViewById(R.id.resultTotal);
+			TextView resultPerPerson = (TextView) findViewById(R.id.resultPerPerson);
 
 			cost.setText("");
 			people.setText("");
 			tip.setText("");
-			result.setText("$0.00");
+			resultTip.setText("$0.00");
+			resultTotal.setText("$0.00");
+			resultPerPerson.setText("$0.00");
 
 			return true;
 		}

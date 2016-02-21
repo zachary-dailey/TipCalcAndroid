@@ -6,9 +6,13 @@
     <string name="numPeople">Number of People:  </string>
     <string name="percTip">Percent Tip:</string>
     <string name="perPerson">Price Per Person:</string>
-    <string name="textResult">$0.00</string>
+    <string name="resultTip">$0.00</string>
+    <string name="resultTotal">$0.00</string>
+    <string name="resultPerPerson">$0.00</string>
     <string name="btnCalculate">Calculate</string>
     <string name="hintCost">0.00</string>
     <string name="hintPeople">1</string>
     <string name="hintTip">18</string>
+    <string name="tip">Tip Amount:</string>
+    <string name="total">Total Bill Plus Tip:</string>
 </resources>
