@@ -51,7 +51,7 @@
                 android:id="@+id/textCost"
                 android:layout_column="1"
                 android:inputType="numberDecimal"
-                android:hint="31.41"
+                android:hint="@string/hintCost"
                 android:paddingLeft="15sp"/>
         </TableRow>
 
@@ -73,7 +73,7 @@
                 android:id="@+id/textNumPeople"
                 android:layout_column="1"
                 android:inputType="number"
-                android:hint="4"
+                android:hint="@string/hintPeople"
                 android:paddingLeft="15sp"/>
         </TableRow>
 
@@ -95,7 +95,7 @@
                 android:id="@+id/textPercTip"
                 android:layout_column="1"
                 android:inputType="numberDecimal"
-                android:hint="18"
+                android:hint="@string/hintTip"
                 android:paddingLeft="15sp"/>
         </TableRow>
 
