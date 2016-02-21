@@ -8,10 +8,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity
 {
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -32,6 +37,58 @@ public class MainActivity extends AppCompatActivity
 			}
 		});
 		*/
+	}
+
+	public void buttonClick(View view) throws IOException
+	{
+		// set method values
+		EditText cost = (EditText) findViewById(R.id.textCost);
+		EditText people = (EditText) findViewById(R.id.textNumPeople);
+		EditText tip = (EditText) findViewById(R.id.textPercTip);
+		TextView result = (TextView) findViewById(R.id.textResult);
+
+		double costOfMeal;
+		int numOfPeople;
+		double percTip;
+		double costPerPerson;
+
+		String strCost;
+		String strPeople;
+		String strTip;
+
+		String textResult;
+
+		// initialize string values
+
+		strCost = cost.getText().toString();
+		strPeople = people.getText().toString();
+		strTip = tip.getText().toString();
+
+		// check not null fields
+		try {
+			if ((strCost != null) && (strCost != "") && (strPeople != null) && (strPeople != "") && (strTip != null) && (strTip != ""))
+			{
+				// initialize values
+
+				costOfMeal = Double.parseDouble(strCost);
+				numOfPeople = Integer.parseInt(strPeople);
+				percTip = Double.parseDouble(strTip);
+				percTip = percTip / 100;
+
+				costPerPerson = (costOfMeal * (1 + percTip)) / numOfPeople;
+
+				DecimalFormat currencyUSD = new DecimalFormat("$###,##0.00");
+				currencyUSD.setDecimalSeparatorAlwaysShown(true);
+
+				textResult = (currencyUSD.format(costPerPerson));
+
+				result.setText(textResult);
+			}
+		} catch (Exception e)
+		{
+			Toast toast = Toast.makeText(this, "Invalid Input(s)", Toast.LENGTH_SHORT);
+			toast.show();
+		}
 	}
 
 	@Override

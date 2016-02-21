@@ -113,6 +113,7 @@
             android:layout_height="wrap_content"
             android:text="@string/btnCalculate"
             android:id="@+id/btnCalculate"
+            android:onClick="buttonClick"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"/>
 
