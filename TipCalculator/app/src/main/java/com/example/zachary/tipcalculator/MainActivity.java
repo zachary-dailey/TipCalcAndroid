@@ -41,11 +41,14 @@ public class MainActivity extends AppCompatActivity
 
 	public void buttonClick(View view) throws IOException
 	{
-		// set method values
+		// get method values
+
 		EditText cost = (EditText) findViewById(R.id.textCost);
 		EditText people = (EditText) findViewById(R.id.textNumPeople);
 		EditText tip = (EditText) findViewById(R.id.textPercTip);
 		TextView result = (TextView) findViewById(R.id.textResult);
+
+		// set method calues
 
 		double costOfMeal;
 		int numOfPeople;
@@ -108,7 +111,18 @@ public class MainActivity extends AppCompatActivity
 		int id = item.getItemId();
 
 		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
+		if (id == R.id.action_clear) {
+			// get method values
+			EditText cost = (EditText) findViewById(R.id.textCost);
+			EditText people = (EditText) findViewById(R.id.textNumPeople);
+			EditText tip = (EditText) findViewById(R.id.textPercTip);
+			TextView result = (TextView) findViewById(R.id.textResult);
+
+			cost.setText("");
+			people.setText("");
+			tip.setText("");
+			result.setText("$0.00");
+
 			return true;
 		}
 
