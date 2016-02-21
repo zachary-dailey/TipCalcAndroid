@@ -52,7 +52,8 @@
                 android:layout_column="1"
                 android:inputType="numberDecimal"
                 android:hint="@string/hintCost"
-                android:paddingLeft="15sp"/>
+                android:paddingLeft="15sp"
+                android:textColorHint="#bababa"/>
         </TableRow>
 
         <TableRow
@@ -74,7 +75,8 @@
                 android:layout_column="1"
                 android:inputType="number"
                 android:hint="@string/hintPeople"
-                android:paddingLeft="15sp"/>
+                android:paddingLeft="15sp"
+                android:textColorHint="#bababa"/>
         </TableRow>
 
         <TableRow
@@ -96,7 +98,8 @@
                 android:layout_column="1"
                 android:inputType="numberDecimal"
                 android:hint="@string/hintTip"
-                android:paddingLeft="15sp"/>
+                android:paddingLeft="15sp"
+                android:textColorHint="#bababa"/>
         </TableRow>
 
     </TableLayout>
